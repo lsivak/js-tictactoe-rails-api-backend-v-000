@@ -10,8 +10,8 @@ def new
 end
 
 def create
-  @game = Game.create(game_params)
-  @gam.save
+  @game = Game.create(:state => params[:state])
+  @game.save
   render :json => @game, status: 201
 end
 
@@ -21,7 +21,8 @@ def show
 end
 
 def update
-  @game.update(game_params)
+  @game = Game.find(params[:id])
+  @game.update(:state => params[:state])
     render :json => @game, status: 202
 end
 end
