@@ -21,6 +21,7 @@ def show
 end
 
 def update
+  @game = Game.find(params[:id])
   @game.update(:state => params[:state])
     render :json => @game, status: 202
 end
