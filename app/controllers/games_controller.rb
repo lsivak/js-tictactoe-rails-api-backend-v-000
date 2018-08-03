@@ -11,7 +11,7 @@ end
 
 def create
   @game = Game.create(:state => params[:state])
-  @gam.save
+  @game.save
   render :json => @game, status: 201
 end
 
